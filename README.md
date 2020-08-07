@@ -1,2 +1,2 @@
-# create-fact-table-python-postgres
- Create fact table from stage table - Python and Postgres
+# create-dw-sql-python-postgres
+ Create DatawareHouse SQLs from Postgres with python
