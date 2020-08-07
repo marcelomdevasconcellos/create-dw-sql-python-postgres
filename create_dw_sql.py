@@ -138,7 +138,7 @@ def main(argv):
         print()
     else:
         print('Example:')
-        print('python create_dw_sql.py -f <file>')
+        print('python create_dw_sql.py -t <tablename>')
 
 
 if __name__ == "__main__":
