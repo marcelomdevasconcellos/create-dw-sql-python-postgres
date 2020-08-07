@@ -112,24 +112,19 @@ def create(tablename):
     print(SELECT_FACT_TABLE % data)
 
 
-
 def main(argv):
-
     tablename = None
-
+    
     try:
         opts, args = getopt.getopt(argv, "t:", ["tablename=", ])
-
     except getopt.GetoptError:
         print('python create_dw_sql.py -t <tablename>')
         sys.exit(2)
 
     for opt, arg in opts:
-
         if opt in ("-h", "--help", '-?'):
             print('python create_dw_sql.py -t <tablename>')
             sys.exit()
-
         elif opt in ("-t", "--tablename"):
             tablename = arg
 
