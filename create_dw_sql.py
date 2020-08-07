@@ -2,7 +2,7 @@ import sys, getopt
 import datetime
 
 
-def executar_sql(text, array=True):
+def execute_sql(text, array=True):
     import psycopg2
     try:
         conn_pg = psycopg2.connect("user='postgres' host='localhost' password='postgres' dbname='dw'")
@@ -70,7 +70,7 @@ SELECT %(tablename)s.id,
 
 def create(tablename):
 
-    fields = executar_sql(FIELDS_SQL % tablename)
+    fields = execute_sql(FIELDS_SQL % tablename)
 
     SELECT = []
     INNER_JOIN = []
