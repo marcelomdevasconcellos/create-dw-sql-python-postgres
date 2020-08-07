@@ -24,7 +24,7 @@ def executar_sql(text, array=True):
 FIELDS_SQL = """
 SELECT column_name , data_type
   FROM information_schema.columns
- WHERE table_name = 'multi_nais'
+ WHERE table_name = '%s'
    AND table_schema = 'stage'
    AND data_type IN ('character varying',
                      'character', 
@@ -70,7 +70,7 @@ SELECT %(tablename)s.id,
 
 def create(tablename):
 
-    fields = executar_sql(FIELDS_SQL)
+    fields = executar_sql(FIELDS_SQL % tablename)
 
     SELECT = []
     INNER_JOIN = []
