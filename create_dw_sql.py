@@ -90,7 +90,7 @@ def create(tablename):
             create_dims += CREATE_DIM_TABLE % temp
             select_dims += SELECT_DIM_TABLE % temp
             SELECT.append("       dim_%s.sk_%s" % (f[0], f[0]))
-            INNER_JOIN.append(" INNER JOIN %s.dim_%s ON dim_%s.%s = %s.%s" % (tablename, f[0], f[0], f[0], tablename, f[0]))
+            INNER_JOIN.append(" LEFT JOIN %s.dim_%s ON dim_%s.%s = %s.%s" % (tablename, f[0], f[0], f[0], tablename, f[0]))
             GROUP_BY.append("          dim_%s.sk_%s" % (f[0], f[0]))
             CREATE.append("  sk_%s INTEGER" % f[0])
 
